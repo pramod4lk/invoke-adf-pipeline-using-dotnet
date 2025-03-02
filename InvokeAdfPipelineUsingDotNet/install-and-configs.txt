@@ -1,0 +1,15 @@
+dotnet nuget list source
+dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+dotnet nuget locals all --clear
+dotnet restore
+
+dotnet add package Microsoft.Azure.Management.DataFactory
+dotnet add package Microsoft.IdentityModel.Clients.ActiveDirectory
+dotnet add package Newtonsoft.Json
+
+<ItemGroup>
+  <None Update="appsettings.json">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+
